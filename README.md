@@ -9,7 +9,7 @@ ___
 -  [Composer](https://getcomposer.org/)
 
 ### How to Install 
-1. clone this project
+1. clone this project and save in htdoc
 2. open database folder and import the database
 3. after that open this project with visual studio code
 4. open terminal and type `composer install ` wait until done
