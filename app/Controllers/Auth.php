@@ -38,8 +38,12 @@ class Auth extends BaseController
 
         //validate user 
         if ($this->userModel->validateUser($username, $password)) {
-            echo "login berhasil";
-            exit();
+            $user = $this->userModel->getUser($username, $password);
+            if ($user->username == 'admin') {
+                return redirect()->to('/admin_dashboard');
+            }
+
+            return  "login berhasil";
         } else {
             echo "login gagal";
             exit();
@@ -67,5 +71,11 @@ class Auth extends BaseController
         } else {
             return redirect()->to('register');
         }
+    }
+
+
+    public function logout()
+    {
+        return redirect()->to('/');
     }
 }

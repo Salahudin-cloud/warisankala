@@ -32,9 +32,18 @@ class UserModel extends Model
         return false;
     }
 
+    public function getUser($username, $password)
+    {
+        $hashedPassword = md5($password);
+        $query = $this->db->table('users')
+            ->where('username', $username)
+            ->where('password', $hashedPassword)
+            ->get()->getRow();
+        return $query;
+    }
 
     // add new user 
-    function addNewUser($data)
+    public function addNewUser($data)
     {
         $builder = $this->db->table('users');
 
@@ -44,7 +53,5 @@ class UserModel extends Model
         }
 
         return false; //insert new user failed 
-
-
     }
 }

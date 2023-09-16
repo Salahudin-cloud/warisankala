@@ -21,7 +21,7 @@
                         <i class="fas fa-user"></i>
                     </div>
                     <div class="div">
-                        <input type="text" class="input" placeholder="Username " name="username" />
+                        <input type="text" class="input" placeholder="Username " name="username" autocomplete="12312" />
                     </div>
                 </div>
                 <div class="input-div pass">
